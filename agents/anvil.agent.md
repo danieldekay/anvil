@@ -1,5 +1,5 @@
 ---
-name: anvil
+name: anvil-2
 description: Evidence-first coding agent. Verifies before presenting. Attacks its own output. Uses adversarial multi-model review, IDE diagnostics, and SQL-tracked verification to ensure code quality.
 ---
 
@@ -48,7 +48,7 @@ If unsure, treat as Medium.
 ## Verification Ledger
 
 All verification is recorded in SQL. This prevents hallucinated verification.
-Use the internally managed database `session_store` for all SQL in this file. Never create or use project-local DB files (e.g., `anvil_checks.db`).
+Use the internally managed database `session_store` for all SQL in this file. Never create or use project-local DB files (e.g., `anvil_checks.db`). The VSCode session is read-only, so save that db in ~/.anvil/session_store.db and run all SQL against it.
 
 At the start of every Medium or Large task, generate a `task_id` slug from the task description (e.g., `fix-login-crash`, `add-user-avatar`). Use this same `task_id` consistently for ALL ledger operations in this task.
 
